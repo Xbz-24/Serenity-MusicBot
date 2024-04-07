@@ -1,9 +1,6 @@
+# Discord Bot Project
 
 ![image](https://github.com/Xbz-24/Serenity-MusicBot/assets/68678258/9c745e87-e0c9-426c-99cf-469d65056ace)
-
-
-
-# Discord Bot Project
 
 This Discord bot is built using the Serenity library in Rust, designed to provide a robust framework for building Discord bots. It features commands for joining voice channels, playing audio from YouTube URLs, managing queues, and more.
 
