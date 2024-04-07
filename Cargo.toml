@@ -6,8 +6,8 @@ edition = "2021"
 [dependencies]
 symphonia = { version = "0.5.4", features = ["aac", "mp3", "isomp4", "alac"] }
 tokio = { version = "1.37.0", features = ["full"] }
-serenity = { version = "0.12.1" }
-songbird = { version = "0.4.1", default-features = true }
+serenity = { version = "0.12.1", features = ["full"] }
+songbird = { version = "0.4.1", default-features = true, features = ["builtin-queue"] }
 tracing-subscriber = "0.3.18"
 poise = "0.6.1"
 reqwest = { version = "0.11.27", features = ["stream"] }
