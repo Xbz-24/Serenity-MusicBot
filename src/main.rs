@@ -56,6 +56,7 @@ async fn main() {
 
     let intents =
         serenity::GatewayIntents::non_privileged() | serenity::GatewayIntents::MESSAGE_CONTENT;
+    
     let mut client = serenity::Client::builder(&token, intents)
         .voice_manager_arc(manager)
         .event_handler(Handler)
@@ -96,7 +97,6 @@ async fn deafen(ctx: Context<'_>) -> CommandResult {
         if let Err(e) = handler.deafen(true).await {
             check_msg(ctx.say(format!("Failed: {:?}", e)).await);
         }
-
         check_msg(ctx.say("Deafened").await);
     }
 
@@ -162,7 +162,6 @@ async fn leave(ctx: Context<'_>) -> CommandResult {
         if let Err(e) = manager.remove(guild_id).await {
             check_msg(ctx.say(format!("Failed: {:?}", e)).await);
         }
-
         check_msg(ctx.say("Left voice channel").await);
     } else {
         check_msg(ctx.reply("Not in a voice channel").await);
@@ -180,7 +179,6 @@ async fn mute(ctx: Context<'_>) -> CommandResult {
         Some(handler) => handler,
         None => {
             check_msg(ctx.reply("Not in a voice channel").await);
-
             return Ok(());
         }
     };
@@ -193,7 +191,6 @@ async fn mute(ctx: Context<'_>) -> CommandResult {
         if let Err(e) = handler.mute(true).await {
             check_msg(ctx.say(format!("Failed: {:?}", e)).await);
         }
-
         check_msg(ctx.say("Now muted").await);
     }
 
@@ -241,7 +238,6 @@ async fn undeafen(ctx: Context<'_>) -> CommandResult {
         if let Err(e) = handler.deafen(false).await {
             check_msg(ctx.say(format!("Failed: {:?}", e)).await);
         }
-
         check_msg(ctx.say("Undeafened").await);
     } else {
         check_msg(ctx.say("Not in a voice channel to undeafen in").await);
@@ -260,7 +256,6 @@ async fn unmute(ctx: Context<'_>) -> CommandResult {
         if let Err(e) = handler.mute(false).await {
             check_msg(ctx.say(format!("Failed: {:?}", e)).await);
         }
-
         check_msg(ctx.say("Unmuted").await);
     } else {
         check_msg(ctx.say("Not in a voice channel to unmute in").await);
