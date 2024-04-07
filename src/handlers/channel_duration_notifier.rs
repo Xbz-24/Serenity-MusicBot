@@ -4,7 +4,8 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 use poise::async_trait;
 use serenity::all::{ChannelId, Http};
 use songbird::{Event, EventContext};
-use crate::utils::check_msg;
+use utils::utility::check_msg;
+use crate::utils;
 
 pub(crate) struct ChannelDurationNotifier {
     pub(crate) chan_id: ChannelId,

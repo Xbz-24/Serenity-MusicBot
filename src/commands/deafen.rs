@@ -1,7 +1,7 @@
 use serenity::all::{Context, Message};
 use serenity::all::standard::CommandResult;
 use serenity::all::standard::macros::command;
-use crate::utils::check_msg;
+use crate::utils::utility::check_msg;
 
 #[command]
 async fn deafen(ctx: &Context, msg: &Message) -> CommandResult {
